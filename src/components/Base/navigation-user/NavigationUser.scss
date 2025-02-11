@@ -1,0 +1,29 @@
+@use '@/assets/style/variable' as *;
+
+.navigation-user {
+  &__wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__wrapper-settings {
+    position: absolute;
+    bottom: 18px;
+    left: 84%;
+    z-index: 1;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $white-color;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use '@/assets/style/variable' as *;
+
+nav {
+  background: rgba(227, 230, 240, 0.72);
+  max-width: 240px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 0.95px 65.6px;
+
+  img {
+    width: 130px;
+    border-radius: 50%;
+  }
+}
+
+.navigation-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__link_active {
+    border-bottom: 4px solid $light-green-color;
+  }
+
+  &__li a {
+    font-size: 24px;
+    font-weight: 600;
+    color: $black-color;
+    padding-bottom: 12px;
+  }
+}
