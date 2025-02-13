@@ -1,0 +1,14 @@
+@use '@/assets/style/variable' as *;
+
+.bi-trash {
+  font-size: 28px;
+  color: $black-color;
+  transition: color 0.3s ease;
+}
+
+.delete-btn {
+  &:hover .bi-trash {
+    color: $red-color;
+  }
+
+}

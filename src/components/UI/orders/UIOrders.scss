@@ -1,0 +1,31 @@
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(21, 177, 39, 0.25);
+  padding: 23px 30px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  &__product {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__product-wrapper {
+    text-align: start;
+  }
+}

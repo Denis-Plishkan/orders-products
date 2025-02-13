@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TheHeader from '@/components/Base/TheHeader.vue'
-import Sidebar from '@/components/UI/sidebar/Sidebar.vue'
+import NavigationSidebar from '@/components/UI/sidebar/NavigationSidebar.vue';
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import Sidebar from '@/components/UI/sidebar/Sidebar.vue'
     </header>
 
     <div class="app__wrapper">
-      <Sidebar />
+      <NavigationSidebar />
 
       <RouterView />
     </div>
@@ -19,8 +19,11 @@ import Sidebar from '@/components/UI/sidebar/Sidebar.vue'
 </template>
 
 <style lang="scss">
+@use '@/assets/style/variable' as *;
+
 header {
   padding: 16px;
+  background: $white-color;
 }
 
 .app {

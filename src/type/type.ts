@@ -1,4 +1,5 @@
 export interface Ilinks {
+  id: number
   href: string
   name: string
 }
@@ -8,10 +9,10 @@ interface Guarantee {
   end: string;
 }
 
-interface Price {
+export interface Price {
   value: number;
   symbol: string;
-  isDefault: number;
+  isDefault?: number;
 }
 
 export interface Product {
@@ -32,11 +33,20 @@ export interface Order {
   id: number;
   title: string;
   date: string;
-  description: string;
+  description?: string;
   products: Product[];
 }
 
 export interface Data {
   orders: Order[];
   products: Product[];
+}
+
+export interface UIOrder {
+  id: number;
+  title: string;
+  date: string;
+  products: number;
+  totalPriceUsd: number;
+  totalPriceUah: number;
 }

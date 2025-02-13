@@ -8,7 +8,7 @@ import {NavigationUser} from "@/components";
   <nav>
     <NavigationUser/>
     <ul class="navigation-menu">
-      <li class="navigation-menu__li" v-for="(link, index) in navLinks" :key="index">
+      <li class="navigation-menu__li" v-for="link in navLinks" :key="link.id">
         <router-link
           class="navigation-menu__link"
           :to="link.href"

@@ -1,9 +1,11 @@
 @use 'reset';
 @use 'media';
+@use '@/assets/style/variable' as *;
 
 body {
   font-weight: normal;
   font-family: Montserrat, sans-serif;
+  background: $light-grey-color;
 }
 
 [class$='__container'] {

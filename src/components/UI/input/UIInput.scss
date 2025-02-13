@@ -1,0 +1,12 @@
+@use '@/assets/style/variable' as *;
+
+.ui-input {
+  width: 280px;
+  border: 1px solid $black-color;
+  border-radius: 5px;
+  padding: 4px;
+
+  &:focus {
+    background-color: $grey-color;
+  }
+}

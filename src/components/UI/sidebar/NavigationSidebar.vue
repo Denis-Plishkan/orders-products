@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import {NavigationMenu} from '@/components'
 </script>
 
@@ -7,5 +8,5 @@ import {NavigationMenu} from '@/components'
 </template>
 
 <style lang="scss">
-@use 'Sidebar';
+@use 'NavigationSidebar';
 </style>
