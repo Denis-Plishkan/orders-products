@@ -27,7 +27,7 @@
   color: $white-color;
 
   &:hover {
-    background: darken($red-color, 10%);
+    background: $red-color-50;
   }
 }
 
@@ -36,6 +36,6 @@
   color: $black-color;
 
   &:hover {
-    background: lighten($grey-color, 10%);
+    background: $light-grey-color;
   }
 }

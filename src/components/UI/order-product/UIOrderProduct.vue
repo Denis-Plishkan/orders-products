@@ -26,7 +26,7 @@ defineEmits(['delete'])
         </div>
       </div>
 
-      <UIDeleteButton :orderId="order.id" @delete="$emit('delete', product)" />
+      <UIDeleteButton :orderId="Number(order.id)" @delete="$emit('delete', product)" />
     </div>
   </div>
 </template>

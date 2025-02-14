@@ -2,16 +2,31 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const currentTime = ref(formatTime())
+const activeConnections = ref<number>(0)
 
-function formatTime() {
+const socket = new WebSocket('ws://localhost:3000')
+
+socket.onmessage = (event) => {
+  try {
+    const data = JSON.parse(event.data)
+    if ('activeConnections' in data) {
+      activeConnections.value = data.activeConnections
+    }
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+function formatTime(): string {
   const now = new Date()
-  const day = now.getDate()
-  const month = now.toLocaleString('en-US', { month: 'short' })
-  const year = now.getFullYear()
-  const hours = now.getHours().toString().padStart(2, '0')
-  const minutes = now.getMinutes().toString().padStart(2, '0')
-
-  return `${day} ${month} ${year}, ${hours}:${minutes}`
+  return now.toLocaleString('en-US', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).replace(',', '')
 }
 
 let interval: ReturnType<typeof setInterval>
@@ -29,19 +44,17 @@ onUnmounted(() => {
 
 <template>
   <div class="current-time">
-    <p class="current-time__text">
-      Today
-    </p>
+    <p class="current-time__connection" v-if="activeConnections !== 0">Active connections: <span>{{ activeConnections }}</span></p>
+    <p class="current-time__text">Today</p>
 
     <div class="current-time__wrapper">
-      <span>{{ currentTime.split(',')[0] }},</span>
+      <span>{{ currentTime.split(' ')[0] }} {{ currentTime.split(' ')[1] }},</span>
 
       <div class="current-time__wrapper-hours">
         <i class="bi bi-clock ms-2 me-1"></i>
-        <span>{{ currentTime.split(',')[1] }}</span>
+        <span>{{ currentTime.split(' ')[3] }}</span>
       </div>
     </div>
-
   </div>
 </template>
 

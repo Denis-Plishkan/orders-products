@@ -10,6 +10,22 @@
     display: flex;
     gap: 20px;
   }
+
+  &__connection {
+    span {
+      color: $light-green-color;
+    }
+  }
+
+  &__wrapper-hours {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  p {
+    font-weight: 500;
+  }
 }
 
 .current-time__wrapper-hours .bi-clock {

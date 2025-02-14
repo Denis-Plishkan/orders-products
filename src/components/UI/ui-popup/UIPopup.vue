@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Product } from '@/type/type'
-import UIButton from '../ui-buttons/ui-button/UIButton.vue';
+import UIButton from '../ui-buttons/ui-button/UIButton.vue'
 
 defineProps<{ products: Product[]; title: string; isOpen: boolean }>()
 const emit = defineEmits(['delete', 'cancel'])
@@ -18,17 +18,8 @@ const emit = defineEmits(['delete', 'cancel'])
         </div>
       </div>
       <div class="popup__buttons">
-        <UIButton 
-          @click="emit('cancel')"
-          :text="'отменить'"
-          :white="true"
-        />
-        <UIButton 
-          @click="emit('delete')"
-          :text="'удалить'"
-          :red="true"
-        />
-          
+        <UIButton @click="emit('cancel')" :text="'отменить'" :white="true" />
+        <UIButton @click="emit('delete')" :text="'удалить'" :red="true" />
       </div>
     </div>
   </div>

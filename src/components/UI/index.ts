@@ -6,3 +6,4 @@ export * from './ui-buttons';
 export * from './ui-popup'
 export * from './order-product'
 export * from './ui-product'
+export * from './ui-select'

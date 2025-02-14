@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import type { UIProduct } from '@/type/type';
+import UIDeleteButton from '../ui-buttons/ui-delete-button/UIDeleteButton.vue';
 
 defineProps<UIProduct>();
+
+const emit = defineEmits(['delete']);
+
+const handleDelete = () => {
+  emit('delete');
+}
 </script>
 
 <template>
@@ -17,17 +24,19 @@ defineProps<UIProduct>();
       {{ type }}
     </p>
 
-    <p>{{ orderTitle }}</p>
+    <p>Order {{ orderTitle }}</p>
 
     <div class="product__times">
-      c {{ start }}
-      по {{ end }}
+      <p>c:  <span>{{ start }}</span></p>
+      <p>по:  <span>{{ end }}</span></p>
     </div>
 
     <div class="product__prices">
       <p>{{ totalPriceUsd }} USD</p>
       <p>{{ totalPriceUah }} UAH</p>
     </div>
+
+    <UIDeleteButton :orderId="id" @click="handleDelete"/>
   </div>
 </template>
 

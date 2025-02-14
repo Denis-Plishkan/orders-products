@@ -70,7 +70,6 @@ const handleDeleteProduct = (product: Product) => {
 const deleteProduct = () => {
   const productId = selectedProducts.value[0]?.id
   if (productId !== undefined) {
-    console.log('Удаляем продукт с ID:', productId)
     store
       .dispatch('deleteProduct', productId)
       .then(() => {
