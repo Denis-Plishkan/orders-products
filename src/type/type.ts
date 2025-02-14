@@ -50,3 +50,28 @@ export interface UIOrder {
   totalPriceUsd: number;
   totalPriceUah: number;
 }
+
+export interface UIPopup {
+  photo: string;
+  title: string;
+  serialNumber: number;
+}
+
+export interface IButton {
+  text: string;
+  red?: boolean;
+  white?: boolean;
+}
+
+export interface UIProduct {
+  id: number;
+  imgSrc: string;
+  title: string;
+  serialNumber: number;
+  type: string;
+  orderTitle: string;
+  start: string;
+  end: string;
+  totalPriceUsd: number;
+  totalPriceUah: number;
+}

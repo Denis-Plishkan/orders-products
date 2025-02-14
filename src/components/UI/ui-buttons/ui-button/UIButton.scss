@@ -1,0 +1,41 @@
+@use '@/assets/style/variable' as *;
+
+.button {
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.red {
+  background: $red-color;
+  color: $white-color;
+
+  &:hover {
+    background: darken($red-color, 10%);
+  }
+}
+
+.white {
+  background: $grey-color;
+  color: $black-color;
+
+  &:hover {
+    background: lighten($grey-color, 10%);
+  }
+}

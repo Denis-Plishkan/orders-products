@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ProductsPage from '@/components/pages/products-page/ProductsPage.vue';
+</script>
 
 <template>
-  <h1>Products</h1>
+  <ProductsPage/>
 </template>

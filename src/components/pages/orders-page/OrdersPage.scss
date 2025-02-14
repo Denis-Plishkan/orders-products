@@ -1,3 +1,5 @@
+@use '@/assets/style/variable' as *;
+
 h1 {
   font-weight: 600;
   font-size: 30px;
@@ -7,4 +9,76 @@ h1 {
 .orders-section {
   padding: 46px;
   width: 100%;
+  position: relative;
+}
+
+.orders {
+  &__wrapper {
+    display: flex;
+    gap: 47px;
+  }
+}
+
+.products {
+  position: absolute;
+  right: 56px;
+  top: 122px;
+  width: 45%;
+  box-shadow: 0px 0px 10px 0px rgba(21, 177, 39, 0.25);
+  padding: 23px 30px;
+  border-radius: 10px;
+  background: $white-color;
+
+  h4 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  button {
+    color: $green-color;
+    font-size: 18px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: -14px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $grey-color;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -14px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $grey-color;
+    }
+
+    img {
+      width: 60px;
+      object-fit: cover;
+    }
+  }
+}
+
+.product {
+  &__item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
 }
