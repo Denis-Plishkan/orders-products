@@ -15,9 +15,7 @@ import { CurrentDate, UIInput } from '@/components'
 </template>
 
 <style lang="scss">
-
 .header {
-
   &__wrapper {
     display: flex;
     justify-content: space-between;

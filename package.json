@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "server": "json-server --watch db.json --port 5000",
+    "websocket": "node server.js",
     "format": "prettier --write src/"
   },
   "dependencies": {

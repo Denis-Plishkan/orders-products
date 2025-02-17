@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { UIProduct } from '@/type/type';
-import UIDeleteButton from '../ui-buttons/ui-delete-button/UIDeleteButton.vue';
+import type { UIProduct } from '@/type/type'
+import UIDeleteButton from '../ui-buttons/ui-delete-button/UIDeleteButton.vue'
 
-defineProps<UIProduct>();
+defineProps<UIProduct>()
 
-const emit = defineEmits(['delete']);
+const emit = defineEmits(['delete'])
 
 const handleDelete = () => {
-  emit('delete');
+  emit('delete')
 }
 </script>
 
 <template>
   <div class="product">
-    <img :src="imgSrc" alt="Product Image" class="product__img">
+    <img :src="imgSrc" alt="Product Image" class="product__img" />
 
     <div class="product__info">
       <p>{{ title }}</p>
@@ -27,8 +27,12 @@ const handleDelete = () => {
     <p>Order {{ orderTitle }}</p>
 
     <div class="product__times">
-      <p>c:  <span>{{ start }}</span></p>
-      <p>по:  <span>{{ end }}</span></p>
+      <p>
+        c: <span>{{ start }}</span>
+      </p>
+      <p>
+        по: <span>{{ end }}</span>
+      </p>
     </div>
 
     <div class="product__prices">
@@ -36,7 +40,7 @@ const handleDelete = () => {
       <p>{{ totalPriceUah }} UAH</p>
     </div>
 
-    <UIDeleteButton :orderId="id" @click="handleDelete"/>
+    <UIDeleteButton :orderId="id" @click="handleDelete" />
   </div>
 </template>
 

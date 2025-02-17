@@ -1,23 +1,31 @@
-# orders-products
+# Project orders-products
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+# Node:22.11.0
 
 ## Project Setup
 
+To install the project, first clone the repository:
+
+```sh
+git clone git@github.com:Denis-Plishkan/orders-products.git
+```
+
+Then navigate to the project directory and install dependencies:
+
 ```sh
 npm install
+```
+
+### Start WebSocket Server
+
+```sh
+npm run websocket
+```
+
+### Start JSON Server
+
+```sh
+npm run server
 ```
 
 ### Compile and Hot-Reload for Development
@@ -37,3 +45,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Run Project with Docker
+
+To build and run the project in Docker:
+
+```sh
+docker build -t orders-products .
+docker run -p 3030:3030 -p 5000:5000 -p 3001:3001 --name orders-products orders-products
+```
+
+
+

@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const currentTime = ref(formatTime())
 const activeConnections = ref<number>(0)
 
-const socket = new WebSocket('ws://localhost:3000')
+const socket = new WebSocket('ws://localhost:3001')
 
 socket.onmessage = (event) => {
   try {
@@ -19,14 +19,16 @@ socket.onmessage = (event) => {
 
 function formatTime(): string {
   const now = new Date()
-  return now.toLocaleString('en-US', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false
-  }).replace(',', '')
+  return now
+    .toLocaleString('en-US', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    })
+    .replace(',', '')
 }
 
 let interval: ReturnType<typeof setInterval>
@@ -44,7 +46,9 @@ onUnmounted(() => {
 
 <template>
   <div class="current-time">
-    <p class="current-time__connection" v-if="activeConnections !== 0">Active connections: <span>{{ activeConnections }}</span></p>
+    <p class="current-time__connection" v-if="activeConnections !== 0">
+      <i class="bi bi-person"></i>: <span>{{ activeConnections }}</span>
+    </p>
     <p class="current-time__text">Today</p>
 
     <div class="current-time__wrapper">

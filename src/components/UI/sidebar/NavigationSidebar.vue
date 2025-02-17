@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import {NavigationMenu} from '@/components'
+import { NavigationMenu } from '@/components'
 </script>
 
 <template>

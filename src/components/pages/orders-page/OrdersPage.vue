@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { useStore } from 'vuex';
+import { useStore } from 'vuex'
 import UIOrders from '@/components/UI/orders/UIOrders.vue'
 import UIPopup from '@/components/UI/ui-popup/UIPopup.vue'
 import UIOrderProduct from '@/components/UI/order-product/UIOrderProduct.vue'
@@ -76,7 +76,7 @@ const deleteProduct = () => {
         showProducts.value = showProducts.value.filter((product) => product.id !== productId)
         isPopupVisible.value = false
       })
-      .catch((error) => console.error('Ошибка при удалении продукта:', error))
+      .catch((error: Error) => console.error('Ошибка при удалении продукта:', error))
   }
 }
 

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { UIOrder } from '@/type/type';
-import ShowProductButton from '../ui-buttons/show-product-button/ShowProductButton.vue';
-import UIDeleteButton from '../ui-buttons/ui-delete-button/UIDeleteButton.vue';
+import type { UIOrder } from '@/type/type'
+import ShowProductButton from '../ui-buttons/show-product-button/ShowProductButton.vue'
+import UIDeleteButton from '../ui-buttons/ui-delete-button/UIDeleteButton.vue'
 
-defineProps<UIOrder & { showProducts: boolean }>();
-const emit = defineEmits(['delete', 'show']);
+defineProps<UIOrder & { showProducts: boolean }>()
+const emit = defineEmits(['delete', 'show'])
 
 const handleDelete = () => {
-  emit('delete');
+  emit('delete')
 }
 
 const handleShow = () => {
-  emit('show');
+  emit('show')
 }
 </script>
 
@@ -19,7 +19,7 @@ const handleShow = () => {
   <div class="order" :class="{ show: showProducts }">
     <h3 :class="{ hidden: showProducts }">{{ title }}</h3>
     <div class="order__product">
-      <ShowProductButton :orderId="id" @click="handleShow"/>
+      <ShowProductButton :orderId="id" @click="handleShow" />
       <div class="order__product-wrapper">
         <p>{{ products }}</p>
         <p>Продукта</p>
@@ -33,7 +33,6 @@ const handleShow = () => {
     </div>
 
     <UIDeleteButton :orderId="id" @click="handleDelete" :class="{ hidden: showProducts }" />
-    
   </div>
 </template>
 

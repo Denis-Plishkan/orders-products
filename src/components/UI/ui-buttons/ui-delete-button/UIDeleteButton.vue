@@ -8,7 +8,6 @@ defineProps<{ orderId: number }>()
   </button>
 </template>
 
-
 <style lang="scss">
 @use 'UIDeleteButton';
 </style>

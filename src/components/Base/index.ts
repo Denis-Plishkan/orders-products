@@ -1,2 +1,2 @@
-export * from './navigation-menu';
-export * from './navigation-user';
+export * from './navigation-menu'
+export * from './navigation-user'

@@ -1,0 +1,16 @@
+@use '@/assets/style/variable' as *;
+
+.close-button {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  background: $white-color;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $light-black;
+}
+
+.close-button .bi-x {
+  font-size: 26px;
+}

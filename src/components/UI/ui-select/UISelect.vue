@@ -9,7 +9,6 @@ const handleChange = (event: Event) => {
     emit('filter', target.value)
   }
 }
-
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IButton } from '@/type/type';
+import type { IButton } from '@/type/type'
 
 defineProps<IButton>()
 </script>

@@ -19,7 +19,9 @@ onMounted(() => {
 
 const filteredProducts = computed(() => {
   if (selectedType.value === 'all') return allProducts.value
-  return allProducts.value.filter((product: Product) => product.type.toLowerCase() === selectedType.value)
+  return allProducts.value.filter(
+    (product: Product) => product.type.toLowerCase() === selectedType.value,
+  )
 })
 
 const calculateTotalPrice = (prices: Product['price'] | undefined, currency: string) => {
@@ -46,7 +48,7 @@ const deleteProduct = async () => {
   <section class="products-section">
     <h1>Продукты / {{ filteredProducts.length }}</h1>
 
-    <UISelect @filter="(value) => selectedType = value" />
+    <UISelect @filter="(value) => (selectedType = value)" />
 
     <h2 v-if="filteredProducts.length === 0" class="products-section__text">Cписок пуст!</h2>
 
